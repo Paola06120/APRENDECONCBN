@@ -1,0 +1,294 @@
+/* Configuración general */
+body {
+    font-family: 'Arial nova', Arial, sans-serif;
+    margin: 5px;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fondo de la página de inicio */
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#background-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Contenedor del login */
+#login-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 280px;
+    margin: auto;
+}
+
+#login-container h2 {
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: #000;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#login-container input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 40px; /* Espacio para el icono */
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #333; /* Ajuste para mayor visibilidad */
+}
+
+#login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FFFF00;
+    color: black;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Cabecera de la app */
+header {
+    background-color: #FFFF00;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Contenedor para el logo y el título */
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; /* Espacio entre logo y título */
+    width: 100%;
+}
+header .logo {
+    height: 80px; /* Ajuste de tamaño para móviles */
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navegación */
+nav {
+    margin-top: 5px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav button {
+    background-color: #FFFF00;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Contenido de perfil */
+.section {
+    padding: 20px;
+    text-align: center;
+    display: none;
+}
+
+#profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Bloques de capacitación */
+.training-block {
+    background-color: #f8f9fa;
+    border: 1px solid #007BFF;
+    margin: 15px 0;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.options button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Modal */
+#modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#modal-iframe {
+    width: 600px;
+    height: 400px;
+}
+
+#close-modal-btn {
+    margin-top: 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Modal para cambiar contraseña */
+#change-password-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1001;
+}
+
+#change-password-modal h3 {
+    font-size: 18px; /* Tamaño más pequeño para el título */
+    margin-bottom: 15px;
+    font-weight: normal; /* Sin negrita */
+    color: #333;
+    text-align: left;
+}
+
+#change-password-modal label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal; /* Sin negrita */
+    text-align: left;
+}
+
+#change-password-modal input {
+    width: 100%; /* Ocupa todo el espacio */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#change-password-modal .input-group {
+    margin-bottom: 15px;
+}
+
+/* Estilos para los botones */
+#change-password-modal .button-container {
+    display: flex; /* Usa flexbox para alinear los botones */
+    justify-content: space-between; /* Espacio entre botones */
+}
+
+#change-password-modal button {
+    width: 48%; /* Ocupa casi la mitad del contenedor */
+    padding: 10px;
+    cursor: pointer;
+    font-weight: normal; /* Sin negrita */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Esquinas redondeadas */
+}
+
+/* Opcional: agrega color a los botones */
+#apply-password-change {
+    background-color: #4CAF50; /* Verde para el botón de aplicar */
+    color: white;
+}
+
+#cancel-password-change {
+    background-color: #f44336; /* Rojo para el botón de cancelar */
+    color: white;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #modal-iframe {
+        width: 90vw;
+        height: 50vh;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    header .logo {
+        height: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    #login-container {
+        width: 90%;
+        padding: 20px;
+    }
+}

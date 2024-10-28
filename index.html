@@ -1,0 +1,384 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APRENDE CON CBN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contenedor del fondo de inicio -->
+    <div id="background-container" class="container">
+        <img id="background-image" src="https://raw.githubusercontent.com/Paola06120/CBN/refs/heads/main/bf08c9d1-1415-4d16-9b1f-e4ef48fe1a03.jfif" alt="Fondo de CBN">
+    </div>
+
+    <!-- Contenedor del inicio de sesión -->
+    <div id="login-container">
+        <h2>INICIAR SESIÓN</h2>
+        <div class="input-group">
+            <input type="text" id="username" placeholder="Usuario" required>
+        </div>
+        <div class="input-group password-group">
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <span id="togglePassword" class="eye-icon" onclick="togglePasswordVisibility()">👁️</span>
+        </div>
+        <button id="login-btn">Iniciar Sesión</button>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+
+    <!-- Aplicación -->
+    <div id="app" style="display: none;">
+        <header>
+            <div class="header-content">
+                <div class="logo-title"> <!-- Agrupar logo y título -->
+                    <img src="https://raw.githubusercontent.com/Paola06120/CBN/d94a2efba88bce89594e68ffd31bf08d41547342/logo%20sacaba.png" 
+                         alt="Logo CBN" class="logo">
+                    <h1>APRENDE CON CBN</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><button id="profile-btn" aria-label="Perfil de usuario">Perfil</button></li>
+                        <li><button id="training-btn" aria-label="Capacitaciones disponibles">Capacitaciones</button></li>
+                        <li><button id="material-btn" aria-label="Material complementario">Material Complementario</button></li>
+                        <li><button id="wellbeing-btn" aria-label="Bienestar integral">Bienestar Integral</button></li>
+                        <li><button id="skap-btn" aria-label="SKAP">SKAP</button></li>
+                    </ul>
+                </nav>
+            </div> 
+        </header>
+
+        <!-- Sección de perfil -->
+        <main>
+            <div id="profile" class="section" style="display: none;">
+                <h2>Perfil de Usuario</h2>
+                <img id="user-photo" src=" " alt="Foto de Usuario">
+                <p>Nombre: <span id="user-name"></span></p>
+                <p>Contraseña: <span id="user-password"></span></p>
+                <button id="change-password-btn">Cambiar Contraseña</button>
+                <button id="logout-btn">Cerrar Sesión</button>
+                
+                <!-- Modal de cambio de contraseña -->
+                <div id="change-password-modal" style="display: none;">
+                    <h2>Cambiar Contraseña</h2>
+                    <div class="input-group">
+                        <label for="current-password">Contraseña Actual</label>
+                        <input type="password" id="current-password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="new-password">Nueva Contraseña</label>
+                        <input type="password" id="new-password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirm-password">Confirmar Nueva Contraseña</label>
+                        <input type="password" id="confirm-password" required>
+                    </div>
+                    <button id="apply-password-change">Aplicar</button>
+                    <button id="cancel-password-change">Cancelar</button>
+                </div>
+            </div>
+
+            <!-- Sección de capacitaciones -->
+            <div id="training" class="section" style="display: none;">
+                <h2>Capacitaciones</h2>
+                
+                <!-- Ejemplo de capacitaciones -->
+              <div class="training-block">
+    <h3>AIB - FSHC - PRP</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/ahY08s0xuRk">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/PpnCwqcWYs?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Aspectos e Impactos Amb y NC Ambientales</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/eRXiKIjF9NA">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/KkJym6Z7sJ?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Carbono Neutro + ESG</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/D_iBZO8mOQw">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/Pages/ResponsePage.aspx?id=GUvwznZ3lEq4mzdcd6j5NtB3e8IFH6ZImR4d0KTLqh9UNFNONFBZTlRQOFdZOUVQQUVRNEQ5WURXTy4u">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Cultura de Seguridad + Territorio Seguro</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/xhSPn0XS4yc">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/vexM1MYumk?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Estándar de limpieza</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/6M-AtI-mYrw">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/z7p0vWCze7?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Examen Anual de Calidad</h3>
+    <div class="options">
+        <button class="video-btn" data-video="">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/Pages/ResponsePage.aspx?id=GUvwznZ3lEq4mzdcd6j5NoFd3agiBqRAqK6Z6pisDtNURDMyTENNQ0xIR1FFVFhOMzBQUUFWOVkyVS4u">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Examen anual Medio Ambiente + Politica de Medio Ambiente</h3>
+    <div class="options">
+        <button class="video-btn" data-video="">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://docs.google.com/forms/d/e/1FAIpQLSeJxq_2cLnJcdYFSa5h2TMB0THQjhtY3I4gXZynH-7ID9hMAg/viewform">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Examen anual Seguridad + Politica de Seguridad</h3>
+    <div class="options">
+        <button class="video-btn" data-video="">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.gle/goZM8x83X3aqg23u6">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Gestión de Efluentes + Sustancias químicas</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/p3RVL04P6TI">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/xP8rsFTMTh?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Gestión de RRNN (E&F)</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/tRaBB4kf65U">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/jMeyVWgPYu?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Gestión de Seguridad Operacional: EPR, AROs, 3D, PT y GT</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/pAC5BT1612s">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/DvhVjJ09zy?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+              <div class="training-block">
+    <h3>Gestión de SIF</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/t769_ItLS6Y">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/mirUsEFe4d?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Habilitación Permisos de trabajo</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/3MxwTMe_S-k">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/BcbSkGak2x?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Habilitación trabajos críticos: Altura, EC, Electrico, Izaje, Excavación</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/UNMgGBcdZ7w">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/HrQn37vbZq?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>High Risk: ESM (Riesgo eléctrico)</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/ss22l_sPjpM">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/hATaMkC3aL?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>High Risk: PSM Amoníaco + Vapor</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/ZuU-CBUk4zA">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/2Z5z7ySguV?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Higiene</h3>
+    <div class="options">
+        <button class="video-btn" data-video="">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/d3FnNqbwyB">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Mandatorio Manejo seguro de vidrio</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/iYMrvvXmTv4">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/Mzs4xCZbAK?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Manejo defensivo</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/vhjRqmwFRfo">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://docs.google.com/forms/d/e/1FAIpQLSc8PVoEsJN2RLigWWTKh5eZE-2y6Zrd4xMWhLeG2vDUSCBUyQ/viewform">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>No conformes</h3>
+    <div class="options">
+        <button class="video-btn" data-video="">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/RzUfpZKHqX">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Prevención de la violencia</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/q_T6yKKqn7k">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.gle/rjTkQny7tLDMeDtn8">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>PTS</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/4zeaA_YjtR0">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/T8GNH7xhem?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Reglas de decisión Calidad</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/0wOlyYPVl3k">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/Rw0zgxaiEu?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Requisitos legales Calidad</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/w3YBz_Z-Jig">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/vxpCbfiyiG?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Requisitos Legales HSMA</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/_B-lif_97y4">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/PmFP3P4cBp?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Respuesta ante emergencias + Brigada de emergencias</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/pngeVN5ku6k">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/Rv8agq6B79?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>SAM y LOTOTO</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/HdDD7FtG0F8">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://docs.google.com/forms/d/e/1FAIpQLSfYiqSvsymy_7qnkhAfcBoS2grlOqeDu4mNn4XSn2n0mDxjrg/viewform">Tomar Examen</button>
+    </div>
+</div>
+              <div class="training-block">
+    <h3>Sensory</h3>
+    <div class="options">
+        <button class="video-btn" data-video="">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/AGcbfnLFX5">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Sustancias Peligrosas</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/sENhkGpM-v0">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.gle/9kqEMFfeCBMbUKrr9">Tomar Examen</button>
+    </div>
+</div>
+
+<div class="training-block">
+    <h3>Train The Trainers</h3>
+    <div class="options">
+        <button class="video-btn" data-video="https://www.youtube.com/embed/cDBTl5BO1UA">Ver Video</button>
+        <button class="infographic-btn" data-infographic="">Ver Infografía</button>
+        <button class="exam-btn" data-exam="https://forms.office.com/r/JgRC57F895?origin=lprLink">Tomar Examen</button>
+    </div>
+</div>
+            </div>
+
+            <!-- Sección de material complementario -->
+            <div id="material" class="section" style="display: none;">
+                <h2>Material Complementario</h2>
+                <p>Contenido del Material Complementario aquí.</p>
+            </div>
+
+            <!-- Sección de bienestar integral -->
+            <div id="wellbeing" class="section" style="display: none;">
+                <h2>Bienestar Integral</h2>
+                <p>Contenido del Bienestar Integral aquí.</p>
+            </div>
+
+            <!-- Sección de SKAP -->
+            <div id="skap" class="section" style="display: none;">
+                <h2>SKAP</h2>
+                <p>Contenido de SKAP aquí.</p>
+            </div>
+
+            <!-- Modales para mostrar el contenido de video, infografía o examen -->
+            <div id="modal-container" style="display: none;">
+                <div id="modal-content">
+                    <iframe id="modal-iframe" src=" " frameborder="0"></iframe>
+                    <button id="close-modal-btn">Cerrar</button>
+                </div>
+            </div>
+        </main>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
